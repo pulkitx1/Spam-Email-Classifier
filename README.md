@@ -57,5 +57,3 @@ Visit `http://127.0.0.1:5000` to use the classifier!
 ## 📊 Dataset
 The dataset used is the [SMS Spam Collection](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) from Kaggle. It contains over 5,000 SMS messages labeled as ham (legitimate) or spam.
 
-## 📝 Author
-Created as a mini-project for learning the basics of Natural Language Processing (NLP) and Machine Learning.
