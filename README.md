@@ -1,5 +1,7 @@
 # Spam Email Classifier 📧
 
+**Live Demo:** [https://spam-email-classifier-nuw1.onrender.com/](https://spam-email-classifier-nuw1.onrender.com/)
+
 A beginner-friendly Machine Learning project created for a first-year engineering student's portfolio. This project uses the **SMS Spam Collection** dataset from Kaggle to classify messages as "Spam" or "Not Spam" (Ham).
 
 ## 🚀 Features
