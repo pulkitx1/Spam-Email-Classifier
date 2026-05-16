@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Email Classifier - Student Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Spam Email Classifier</h1>
+        <p class="subtitle">A simple Machine Learning project using Multinomial Naive Bayes</p>
+        
+        <form action="/predict" method="POST">
+            <textarea name="message" rows="6" placeholder="Enter your email or SMS message here..." required>{{ original_message if original_message else '' }}</textarea>
+            <br>
+            <button type="submit" class="btn">Predict Message</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result-box">
+            <h3>Prediction Result:</h3>
+            <p class="prediction-value {{ 'spam' if prediction_text == 'Spam' else 'ham' }}">
+                {{ prediction_text }}
+            </p>
+            <p class="note">This message is classified as <strong>{{ prediction_text }}</strong>.</p>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
