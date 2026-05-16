@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
 import pickle
 import nltk
-from nltk.corpus import stopwords
 import string
+
+# Ensure NLTK data is downloaded on the server
+nltk.download('stopwords')
+nltk.download('punkt')
+from nltk.corpus import stopwords
 
 # Initialize Flask app
 app = Flask(__name__)
