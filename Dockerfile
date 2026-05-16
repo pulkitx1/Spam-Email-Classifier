@@ -1,0 +1,21 @@
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Download NLTK data needed for preprocessing
+RUN python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
+
+# Expose port 7860 (Hugging Face Spaces default port)
+EXPOSE 7860
+
+# Run the application
+# We bind to 0.0.0.0:7860 as required by Hugging Face
+CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:app"]
